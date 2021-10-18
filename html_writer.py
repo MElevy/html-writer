@@ -13,33 +13,6 @@ class html_writer:
 		self.result+='<body>\n'
 		for j in content:
 			self.result+=f'{j}'
-			continue
-			if j.type=='table':
-				if not j.id:
-					self.f.write('<table>\n')
-					self.f.write('<tr>\n')
-					for header in j.headers:
-						self.f.write(f'<th>{header}</th>\n')
-					self.f.write('</tr>\n')
-					for row in j.layout:
-						self.f.write('<tr>\n')
-						for item in row:
-							self.f.write(f'<td>{item}</td>\n')
-						self.f.write('</tr>\n')
-					self.f.write('</table>\n')
-				else:
-					self.f.write('<table id="{j.id}>\n')
-					self.f.write('<tr>\n')
-					for header in j.headers:
-						self.f.write(f'<th>{header}</th>\n')
-					self.f.write('</tr>\n')
-					for row in j.layout:
-						self.f.write('<tr>\n')
-						for item in row:
-							self.f.write(f'<td>{item}</td>\n')
-						self.f.write('</tr>\n')
-					self.f.write('</table\n')
-				
 		self.result+='</body>\n'
 	
 	def style(self, css):
